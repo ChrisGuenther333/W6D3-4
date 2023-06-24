@@ -45,15 +45,18 @@ body {
     flex-direction: column;
     overflow-y: auto;
 }
-
 .comment {
+    display: flex;
+    flex-direction: column;
+}
+
+.originalComment {
     margin-top: 25px;
     margin-left: 25px;
     margin-right: 25px;
     background-color: rgb(241, 241, 241);
     display: flex;
-    flex-wrap: wrap;
-    word-wrap: break-word;
+    flex-direction: row;
     
 }
 
@@ -64,15 +67,19 @@ img {
 }
 
 .commentUser {
+    width: 400px;
     font-size: 20px;
     margin: 20px 0 2px 30px;
     color: rgb(58, 58, 58);
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .commentText {
     font-size: 40px;
     margin: 0 0 2px 30px;
     width: 1460px;
+    word-wrap: break-word;
 }
 
 .userAndComment {
@@ -109,10 +116,11 @@ img {
 .editComment {
     width: 1750px;
     height: 50px;
-
+    margin-left: 25px;
     background-color: rgb(241, 241, 241);
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .eCText {

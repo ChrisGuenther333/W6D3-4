@@ -1,1 +1,0 @@
-Add div around original comment, add row flex to that, column flex to whole comment with edit, should resolve flex-wrap issues

@@ -14,14 +14,16 @@ $('#submitButton').on('click', function() {
 
     if(checkFields() === 'checked') {
         $('.comments').prepend(`<div class="comment">
-            <img src="./Images/facebook-profile-blank-face.jpeg" alt="Profile picture"></img>
-            <div class="userAndComment">
-                <p class="commentUser">` + $('#displayName').val() + `</p>
-                <p class="commentText">` + $('#commentText').val() + `</p>
-            </div>
-            <div class="editAndDelete">
-                <input class="editButton" type="button" value="Edit">
-                <input class="deleteButton" type="button" value="Delete">
+            <div class="originalComment">
+                <img src="./Images/facebook-profile-blank-face.jpeg" alt="Profile picture"></img>
+                <div class="userAndComment">
+                    <p class="commentUser">` + $('#displayName').val() + `</p>
+                    <p class="commentText">` + $('#commentText').val() + `</p>
+                </div>
+                <div class="editAndDelete">
+                    <input class="editButton" type="button" value="Edit">
+                    <input class="deleteButton" type="button" value="Delete">
+                </div>
             </div>
         </div>`);
 
@@ -34,9 +36,10 @@ $('#submitButton').on('click', function() {
 });
 
 $('.comments').on('click', '.editButton', function() {
-    const comBox = $(this).parents()[1];
-    const cBChildren = $(comBox).children()[1];
-    const comText = $(cBChildren).children()[1];
+    const comBox = $(this).parents()[2];
+    const cBChildren = $(comBox).children()[0];
+    const cBCChildren = $(cBChildren).children()[1];
+    const comText = $(cBCChildren).children()[1];
 
     $(this).toggleClass('editVisible')
 
@@ -55,27 +58,31 @@ $('.comments').on('click', '.editButton', function() {
 });
 
 $('.comments').on('click', '.deleteButton', function() {
-    const thisParent = $(this).parents()[1];
+    const thisParent = $(this).parents()[2];
     $(thisParent).remove();
 });
 
 $('.comments').on('click', '.eCButton', function() {
     const comBox = $(this).parents()[1];
-    const cBChildren = $(comBox).children()[1];
-    const comText = $(cBChildren).children()[1];
+    const cBChildren = $(comBox).children()[0];
+    const cBCChildren = $(cBChildren).children()[1];
+    const comText = $(cBCChildren).children()[1];
 
-    const eCBox = $(this).parents()[1];
-    const eCBChildren = $(eCBox).children()[3];
-    const eComText = $(eCBChildren).children()[0];
+
+    const eComText = $(this).prev();
     
     $(comText).text($(eComText).val());
 
-    const backToEAD = $(comBox).children()[2];
+    const eCCBox = $(this).parents()[0];
+
+    const backToEC = $(this).parents()[0];
+    const backToOC = $(backToEC).prev();
+    const backToEAD = $(backToOC).children()[2];
     const backToE = $(backToEAD).children()[0];
 
     $(backToE).toggleClass('editVisible');
-    $(eCBChildren).css('display', 'none')
-    $(eCBChildren).remove()
+    $(eCCBox).css('display', 'none')
+    $(eCCBox).remove()
 
 
 
