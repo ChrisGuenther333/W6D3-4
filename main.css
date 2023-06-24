@@ -10,13 +10,6 @@ body {
     background-color: rgb(241, 241, 241);
 }
 
-/*#page {
-    width: 1800px;
-    height:500px;
-    background-color: rgb(197, 197, 197);
-text-align: center;
-}*/
-
 #post {
     position: fixed;
     width: 1800px;
@@ -36,22 +29,38 @@ text-align: center;
     margin: 0 0 2px 30px;
 }
 
-.comments {
+#commentsBackground {
     width: 1800px;
     height: 670px;
     margin: 150px 55px 0 55px;
     background-color: rgb(223, 223, 223);
+}
+
+.comments {
+    width: 1800px;
+    height: 100%;
+    margin: 150px 55px 0 0;
+    background-color: rgb(223, 223, 223);
     display: flex;
     flex-direction: column;
-    
+    overflow-y: auto;
 }
 
 .comment {
-    width: 1750px;
-    height: 100px;
     margin-top: 25px;
     margin-left: 25px;
+    margin-right: 25px;
     background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    
+}
+
+img {
+    margin: 10px 0 10px 18px;
+    height: 80px;
+    width: 100px;
 }
 
 .commentUser {
@@ -63,6 +72,63 @@ text-align: center;
 .commentText {
     font-size: 40px;
     margin: 0 0 2px 30px;
+    width: 1460px;
+}
+
+.userAndComment {
+    display: flex;
+    flex-direction: column;
+}
+
+.editAndDelete {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.editButton {
+    width: 50px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+    color: rgb(192, 232, 248);
+}
+
+.deleteButton {
+    width: 80px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+    color: rgb(192, 232, 248);
+}
+
+.editComment {
+    width: 1750px;
+    height: 50px;
+
+    background-color: rgb(241, 241, 241);
+    display: flex;
+    flex-direction: row;
+}
+
+.eCText {
+    margin: 0 6px 2px 150px;
+    height: 50%;
+    width: 1460px;
+}
+
+.eCButton {
+    width: 90;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    margin: 0 30px 90px 0;
+    color: rgb(192, 232, 248);    
 }
 
 #addComment {
@@ -74,7 +140,7 @@ text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 55px;
+    margin: 0 55px 0 0;
 }
 
 #displayName {

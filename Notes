@@ -1,5 +1,1 @@
-Comments currently shrink within page boundaries rather than moving offscreen
-
-Need to add user image for each comment 
-
-Need to add edit and delete buttons
+Add div around original comment, add row flex to that, column flex to whole comment with edit, should resolve flex-wrap issues
